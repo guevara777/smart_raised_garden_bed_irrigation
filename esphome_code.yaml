@@ -1,0 +1,52 @@
+esphome:
+  name: esp-waterlevel
+  comment: "Check Water-Level in water tank"
+
+esp32:
+  board: esp32dev # Change to fit your Board
+  framework:
+    type: arduino # Change to fit your Board
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "<PUT_ENCRYPTION_KEY_HERE>"  # Put in your own encryption-key or use the one esphome creates for you
+
+ota:
+  password: "<PUT_OTA_PASSWORD_HERE>" # Put you own OTA-Password here or use the one esphome creates for you
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esp-Waterlevel Fallback Hotspot"
+    password: "<PUT_FALLBACK_PASSWORD_HERE>" # Put your Fallback-Password here or use the one esphome creates for you
+
+captive_portal:
+
+web_server:
+  local: true
+
+binary_sensor:
+  - platform: gpio
+    pin: GPIO19 # Change this to the PIN you use on your Board
+    name: "Moisture Sensor Top"
+    device_class: moisture
+    filters:
+    - delayed_on: 10ms
+    - delayed_off: 200ms
+    - invert:
+
+  - platform: gpio
+    pin: GPIO18 # Change this to the PIN you use on your Board
+    name: "Moisture Sensor Bottom"
+    device_class: moisture
+    filters:
+    - delayed_on: 10ms
+    - delayed_off: 200ms
+    - invert:
