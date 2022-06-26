@@ -1,4 +1,4 @@
-# A smart raised garden bed Irrigation-Soltuion
+# A smart raised garden bed Irrigation-Solution
 A smart raised garden bed irrigation-control with home assistant and esphome. This is my first own project - so please be kind :)
 
 ## What is this?
@@ -23,5 +23,6 @@ If the tank runs out of water, the bottom-water-level-sensor will notice that an
 ## Sofware-Setup
 
 ### ESPHOME
+See [ESPhome-Yaml-Code](https://github.com/guevara777/smart_raised_garden_bed_irrigation/blob/main/esphome_code.yaml)
 
 ### Automation in Home Assistant
