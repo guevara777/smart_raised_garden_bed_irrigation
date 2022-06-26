@@ -1,0 +1,43 @@
+alias: 'Scheduled Raised Garden Bed irrigation'
+description: ''
+trigger:
+  - platform: time_pattern
+    hours: /1    # every hour
+    minutes: '0'
+    seconds: '0'
+condition:
+  - condition: time
+    after: '05:00:00'  # between 5 oclock in the morning
+    before: '23:00:00' # and 11 oclock in the evenig
+    weekday:
+      - mon # every weekday
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+      - sun
+action:
+  - if:
+      - type: is_moist
+        condition: device
+        device_id: <DEVICE-ID of the bottom moisture-sensor>
+        entity_id: binary_sensor.<entity-id of the bottom moisture-sensor>
+        domain: binary_sensor
+    then:
+      - type: turn_on
+        device_id: <device-id of your smart-plug>
+        entity_id: switch.<entity-id of your smart-plug>
+        domain: switch
+      - delay: # Cut Power after 1:05m (my Pump pumps for 60s)
+          hours: 0
+          minutes: 1
+          seconds: 5
+          milliseconds: 0
+      - type: turn_off
+        device_id: <device-id of your smart-plug>
+        entity_id: switch.<entity-id of your smart-plug>
+        domain: switch
+    else:
+      # i had a notification-service to remind me to refill the water-tank here, before i finished my "auto-refill-automation"
+mode: single
