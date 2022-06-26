@@ -1,0 +1,25 @@
+alias: Refill Water Tank
+description: 'Opens the water outlet if the bottom moisture-sensor is dry and closes the water outlet if the upper moisture-sensor gets wet'
+trigger:
+  - type: not_moist
+    platform: device
+    device_id: <DEVICE-ID of the bottom moisture-sensor>
+    entity_id: binary_sensor.<entity-id of bottom moisture-sensor>
+    domain: binary_sensor
+condition: []
+action:
+  - type: turn_on
+    device_id: <DEVICE-ID of the Zigbee-Water-Outlet>
+    entity_id: switch.<entity-id of the zigbee-water-outlet>
+    domain: switch
+  - wait_for_trigger:
+      - type: moist
+        platform: device
+        device_id: <DEVICE-ID of the top moisture-sensor>
+        entity_id: binary_sensor.<entity-id of top moisture-sensor>
+        domain: binary_sensor
+  - type: turn_off
+    device_id: <DEVICE-ID of the Zigbee-Water-Outlet>
+    entity_id: switch.<entity-id of the zigbee-water-outlet>
+    domain: switch
+mode: single
