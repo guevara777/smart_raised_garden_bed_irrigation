@@ -19,6 +19,7 @@ If the tank runs out of water, the bottom-water-level-sensor will notice that an
 
 ## Hardware-Setup
 ![image](https://user-images.githubusercontent.com/29648553/175833356-20f04f1c-4e77-4b29-9e7c-c16920f21035.png)
+Hint: Use the resistors to ensure the top and bottom-sensors dont give wrong values.
 
 ## Sofware-Setup
 
