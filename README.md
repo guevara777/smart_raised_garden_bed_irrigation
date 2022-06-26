@@ -23,6 +23,7 @@ If the tank runs out of water, the bottom-water-level-sensor will notice that an
 ## Sofware-Setup
 
 ### ESPHOME
-See [ESPhome-Yaml-Code](https://github.com/guevara777/smart_raised_garden_bed_irrigation/blob/main/esphome_code.yaml)
+See [ESPhome-Yaml-Code](https://github.com/guevara777/smart_raised_garden_bed_irrigation/blob/main/esphome_code.yaml) for Water-Level-Sensor
 
 ### Automation in Home Assistant
+See [Refill-Automation](https://github.com/guevara777/smart_raised_garden_bed_irrigation/blob/main/ha-automation-refill-water-tank) and [Hourly-Irrigation-Automation](https://github.com/guevara777/smart_raised_garden_bed_irrigation/blob/main/ha-houry-irrigation)
