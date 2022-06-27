@@ -1,6 +1,11 @@
 # A smart raised garden bed Irrigation-Solution
 A smart raised garden bed irrigation-control with home assistant and esphome. This is my first own project - so please be kind :)
 
+![PXL_20220627_075939379](https://user-images.githubusercontent.com/29648553/175890840-0a84fe4e-fdb1-408a-a3d4-66158df6a35f.jpg)
+![PXL_20220627_075952185](https://user-images.githubusercontent.com/29648553/175890858-84a86acb-de15-4e44-9050-e07d1ad966fd.jpg)
+![PXL_20220627_080024864](https://user-images.githubusercontent.com/29648553/175890862-3bb80dd7-28a5-4e9c-b693-825ee2bee178.jpg)
+![PXL_20220627_080048037](https://user-images.githubusercontent.com/29648553/175890869-1f655fc8-b02b-4f29-9102-d1261e9db137.jpg)
+
 ## What is this?
 I´ve created a smart raised garden bed irrigation-control to use with home assistant. I use different parts for this. The watering-solution is a cheap "plug-and -play-pump-in-a-water-tank"-solution from a discounter. Once it is connected to power the pump pumps water for 1-minute every 12 hours. I use an wifi-controlled socket to power it on and off. After powering it on it pumps water for 1 minute and the 12-hour timer starts. Since i want the pump to work more often then every 12 hours, i power the plug off after the pumps finishes its 1-minute-work and power it on every 60 minutes (could be any time you wish). So i do have control over the amount of water that will go to the raised garden bed.
 
